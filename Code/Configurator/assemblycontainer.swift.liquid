@@ -36,7 +36,7 @@ class {{ module_info.name }}AssemblyContainer: Assembly {
 			return presenter
 		}
 		
-		container.registerForStoryboard({{ module_info.name }}ViewController.self) { r, viewController in
+		container.storyboardInitCompleted({{ module_info.name }}ViewController.self) { r, viewController in
 			viewController.output = r.resolve({{ module_info.name }}Presenter.self, argument: viewController)
 		}
 	}
